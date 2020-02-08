@@ -5,13 +5,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div th:each="team:${teamList}">
-		<div th:text="${team.id}"></div>
-		<div th:text="${team.leagueName}"></div>
-		<div th:text="${team.teamName}"></div>
-		<div th:text="${team.headquarters}"></div>
-		<div th:text="${team.inauguration}"></div>
-		<div th:text="${team.history}"></div>
+	<div th:each="col:${team}">
+		<strong>球団名</strong>
+		<div th:text="${col.teamName}"></div>
+		<strong>本拠地</strong>
+		<div th:text="${col.headquarters}"></div>
+		<strong>発足</strong>
+		<div th:text="${col.inauguration}"></div>
+		<strong>歴史</strong>
+		<div th:text="${col.history}"></div>
+		<a th:href="@{/team/showList}">戻る</a>
 	</div>
 </body>
 </html>
