@@ -4,13 +4,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
 import com.example.domain.Team;
 
 @Repository
-public class teamRepository {
+public class TeamRepository {
 	
 	@Autowired
 	private NamedParameterJdbcTemplate template; 
@@ -23,7 +25,7 @@ public class teamRepository {
 		team.setHeadquarters(rs.getString("headquarters"));
 		team.setInauguration(rs.getString("inauguration"));
 		team.setHistory(rs.getString("history"));
-		return null;
+		return team;
 	}; 
 
 	public List<Team> findAll() {
@@ -32,4 +34,10 @@ public class teamRepository {
 		return teamList;
 	}
 	
+	public Team load(Integer id) {
+		String sql = "SELECT id , league_name, team_name, headquarters, inauguration, history FROM teams WHERE id = :id";
+		SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
+		Team team = template.queryForObject(sql, param, TEAM_ROW_MAPPER);
+		return team;
+	}
 }
