@@ -17,12 +17,41 @@ private String headquarters;
 private String inauguration;
 private String history;
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CREATE TABLE hotels(
 	
-  id serial primary key,
+    id serial primary key,
 	area_name text,
 	hotel_name text,
 	address text,
+	
 	nearest_station text,
 	price integer,
 	parking text
