@@ -10,6 +10,13 @@ CREATE TABLE teams(
 
 );
 
+private Integer id;
+private String leagueName;
+private String teamName;
+private String headquarters;
+private String inauguration;
+private String history;
+
 CREATE TABLE hotels(
 	
   id serial primary key,
