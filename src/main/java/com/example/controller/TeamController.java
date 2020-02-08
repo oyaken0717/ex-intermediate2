@@ -17,13 +17,18 @@ public class TeamController {
 	@Autowired
 	private TeamService teamService;
 	
-	@RequestMapping("showList")
+	@RequestMapping("/showList")
 	public String showList(Model model) {
 		List<Team> teamList = teamService.showList();
 		model.addAttribute("teamList", teamList);
 		return "list";
 	}
 	
-	
+	@RequestMapping("/showDetail")
+	public String showDetail(Integer id,Model model) {
+		Team team = teamService.showDetail(id);
+		model.addAttribute("team", team);
+		return "detail";
+	}
 	
 }
