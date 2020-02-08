@@ -16,7 +16,7 @@ public class HotelService {
 	@Autowired
 	private HotelRepository hotelRepository;
 	
-	public List<Hotel> index(Integer price) {
+	public List<Hotel> searchByLessThanPrice(Integer price) {
 		List<Hotel> hotelList = hotelRepository.findByPrice(price);
 		return hotelList;
 	}
