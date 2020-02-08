@@ -29,7 +29,7 @@ public class TeamRepository {
 	}; 
 
 	public List<Team> findAll() {
-		String sql = "SELECT id , league_name, team_name, headquarters, inauguration, history FROM teams";
+		String sql = "SELECT id , league_name, team_name, headquarters, inauguration, history FROM teams ORDER BY inauguration";
 		List<Team> teamList = template.query(sql, TEAM_ROW_MAPPER);
 		return teamList;
 	}
