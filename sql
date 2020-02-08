@@ -45,6 +45,20 @@ private String history;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 CREATE TABLE hotels(
 	
     id serial primary key,
@@ -57,3 +71,25 @@ CREATE TABLE hotels(
 	parking text
 
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
