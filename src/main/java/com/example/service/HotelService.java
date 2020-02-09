@@ -21,4 +21,8 @@ public class HotelService {
 		return hotelList;
 	}
 	
+	public List<Hotel> searchByNoPrice() {
+		List<Hotel> hotelList = hotelRepository.findAll();
+		return hotelList;
+	}
 }
