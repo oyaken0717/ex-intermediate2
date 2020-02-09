@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form th:action="@{/cloth/receive-form}" method="post">
+		<div>
+			<input type="radio" id="huey" name="drone" value="huey" checked>
+			<label for="huey">Huey</label>
+		</div>
+
+		<div>
+			<input type="radio" id="dewey" name="drone" value="dewey"> <label
+				for="dewey">Dewey</label>
+		</div>
+
+		<div>
+			<input type="radio" id="louie" name="drone" value="louie"> <label
+				for="louie">Louie</label>
+		</div>
+		<select name="hobby">
+			<option value="swim">水泳</option>
+			<option value="bike">自転車</option>
+			<option value="run">走る</option>
+		</select>
+
+
+		<button type="submit">送信</button>
+	</form>
+
+
+</body>
+</html>

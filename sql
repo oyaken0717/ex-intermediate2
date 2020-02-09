@@ -73,6 +73,31 @@ CREATE TABLE hotels(
 );
 
 
+CREATE TABLE clothes(
+
+	id serial primary key,
+	category text,
+	genre text,
+	
+	gender integer,
+	color text,
+	price integer,
+	size text
+
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
