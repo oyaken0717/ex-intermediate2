@@ -24,8 +24,13 @@ public class HotelController {
 	
 	@RequestMapping("receive-form")
 	public String searchByLessThanPrice(Integer price, Model model) {
-		List<Hotel> hotelList = hotelService.searchByLessThanPrice(price);
-		model.addAttribute("hotelList", hotelList);
+		if (price == null) {
+			List<Hotel> hotelList = hotelService.searchByNoPrice();			
+			model.addAttribute("hotelList", hotelList);
+		}else {
+			List<Hotel> hotelList = hotelService.searchByLessThanPrice(price);			
+			model.addAttribute("hotelList", hotelList);
+		}
 		return "result";
 	}
 	
