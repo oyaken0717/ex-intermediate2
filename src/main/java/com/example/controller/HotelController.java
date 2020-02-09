@@ -31,7 +31,7 @@ public class HotelController {
 			List<Hotel> hotelList = hotelService.searchByLessThanPrice(price);			
 			model.addAttribute("hotelList", hotelList);
 		}
-		return "result";
+		return "index";
 	}
 	
 }

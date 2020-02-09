@@ -10,5 +10,29 @@
 		<input type="text" name="price">円以下<br>
 		<button type="submit">検索</button>
 	</form>
+	
+	<div th:unless="${hotelList == null}">
+		<table border="1" th:each="list:${hotelList}">
+			<tr>
+				<td>ホテル名</td>
+				<td th:text="${list.hotelName}">
+					<span></span>
+				</td>
+			</tr>
+			<tr>
+				<td>最寄駅</td>
+				<td th:text="${list.nearestStation}">
+					<span></span>
+				</td>
+			</tr>
+			<tr>
+				<td>価格</td>
+				<td th:text="${list.price}">
+					<span></span>
+				</td>
+			</tr>
+		</table><br>
+	</div>
+	
 </body>
 </html>
