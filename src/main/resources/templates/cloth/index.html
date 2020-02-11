@@ -3,34 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+ <link rel= "stylesheet" th:href ="@{/ex03.css}">
 </head>
 <body>
 
 	<form th:action="@{/cloth/receive-form}" method="post">
-		<div>
-			<input type="radio" id="huey" name="drone" value="huey" checked>
-			<label for="huey">Huey</label>
-		</div>
-
-		<div>
-			<input type="radio" id="dewey" name="drone" value="dewey"> <label
-				for="dewey">Dewey</label>
-		</div>
-
-		<div>
-			<input type="radio" id="louie" name="drone" value="louie"> <label
-				for="louie">Louie</label>
-		</div>
-		<select name="hobby">
-			<option value="swim">水泳</option>
-			<option value="bike">自転車</option>
-			<option value="run">走る</option>
-		</select>
-
-
+		<input type="radio" name="gender" value="0" checked>Man<br>
+		<input type="radio" name="gender" value="1">Woman<br>
+		
+		<select name="color">
+			<option value="赤">赤</option>
+			<option value="青">青</option>
+			<option value="白">白</option>
+			<option value="黄">黄</option>
+		</select><br>
 		<button type="submit">送信</button>
-	</form>
+	</form><br>
 
-
+	<div class="result" th:unless="${clothList == null}">
+		<table th:each="cloth:${clothList}">
+			<tr class="tablerow1">
+				<td>ジャンル</td>
+				<td th:text="${cloth.genre}"></td>
+			</tr>
+			<tr class="tablerow2">
+				<td>サイズ</td>
+				<td th:text="${cloth.size}"></td>
+			</tr>
+			<tr class="tablerow3">
+				<td>価格</td>
+				<td th:text="${cloth.price}"></td>
+			</tr>
+			
+		</table>
+	</div>
 </body>
 </html>

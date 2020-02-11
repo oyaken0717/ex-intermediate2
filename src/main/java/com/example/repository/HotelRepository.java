@@ -32,13 +32,12 @@ public class HotelRepository {
 	public List<Hotel> findByPrice(Integer price) {
 		String sql = "SELECT id, area_name, hotel_name, address, nearest_station, price, parking FROM hotels WHERE price <= :price";
 		SqlParameterSource param = new MapSqlParameterSource("price",price);
-		List<Hotel> hotelList = template.query(sql, param,HOTEL_ROW_MAPPER);
+		List<Hotel> hotelList = template.query(sql, param, HOTEL_ROW_MAPPER);
 		return hotelList;
 	}
 	
 	public List<Hotel> findAll() {
 		String sql = "SELECT id, area_name, hotel_name, address, nearest_station, price, parking FROM hotels";
-//		SqlParameterSource param = new MapSqlParameterSource("price",price);
 		List<Hotel> hotelList = template.query(sql,HOTEL_ROW_MAPPER);
 		return hotelList;
 	}

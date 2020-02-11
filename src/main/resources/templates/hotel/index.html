@@ -3,32 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel= "stylesheet" th:href ="@{/ex02.css}">
 </head>
 <body>
 	<h1>ホテル検索</h1>
-	<form th:action="@{/hotel/receive-form}" method="post">
-		<input type="text" name="price">円以下<br>
+	<form th:action="@{/hotel/receive-form}" method="post" th:object="${hotelForm}">
+		<div th:errors="*{price}" style="color:red"></div>
+		<input type="text" name="price" th:field="	*{price}">円以下<br>
 		<button type="submit">検索</button>
-	</form>
+	</form><br>
 	
 	<div th:unless="${hotelList == null}">
 		<table border="1" th:each="list:${hotelList}">
-			<tr>
+			<tr class="tablerow1">
 				<td>ホテル名</td>
 				<td th:text="${list.hotelName}">
-					<span></span>
 				</td>
 			</tr>
-			<tr>
+			<tr class="tablerow2">
 				<td>最寄駅</td>
 				<td th:text="${list.nearestStation}">
-					<span></span>
 				</td>
 			</tr>
-			<tr>
+			<tr class="tablerow3">
 				<td>価格</td>
-				<td th:text="${list.price}">
-					<span></span>
+				<td th:text="${#numbers.formatInteger(list.price,2,'COMMA')}">
 				</td>
 			</tr>
 		</table><br>

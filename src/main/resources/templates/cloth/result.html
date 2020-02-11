@@ -5,6 +5,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-a
+	<table border="1" th:each="cloth:${clothList}">
+		<tr>
+			<td>ジャンル</td>
+			<td th:text="${cloth.genre}"></td>
+		</tr>
+		<tr>
+			<td>サイズ</td>
+			<td th:text="${cloth.size}"></td>
+		</tr>
+		<tr>
+			<td>価格</td>
+			<td th:text="${cloth.price}"></td>
+		</tr>
+		
+	</table>
 </body>
 </html>

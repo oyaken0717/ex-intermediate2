@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+table{
+	border: solid 2px #FFBC61;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+td{
+	border: solid 2px #FFBC61;
+}
+.tablerow1{
+	background-color:#FFE4E1;
+}
+
+.tablerow2{
+	background-color:#FFC6D0;
+}
+.tablerow3{
+	background-color:#FFE4E1;
+}
