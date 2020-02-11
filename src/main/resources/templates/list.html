@@ -5,6 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<strong>野球チーム一覧</strong><br>
 	<div th:each="team:${teamList}">
 		<a th:href="@{'/team/showDetail?id=' + ${team.id}}">
 			<span th:text="${team.teamName}"></span>

@@ -2,11 +2,17 @@ package com.example.domain;
 
 public class Team {
 	
+	/** ID */
 	private Integer id;
+	/** リーグ名 */
 	private String leagueName;
+	/** 球団名 */
 	private String teamName;
+	/** 本拠地 */
 	private String headquarters;
+	/** 発足 */
 	private String inauguration;
+	/** 歴史 */
 	private String history;
 	
 	public Integer getId() {
