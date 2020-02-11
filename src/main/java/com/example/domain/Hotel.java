@@ -1,14 +1,27 @@
 package com.example.domain;
 
+/**
+ * ホテル一軒の情報を表すドメイン.
+ * 
+ * @author oyamadakenji
+ *
+ */
 public class Hotel {
 	
+	/** ID */
 	private Integer id;
+	/** エリアネーム */
 	private String areaName;
+	/** ホテル名 */
 	private String hotelName;
+	/** 住所 */
 	private String address;
 	
+	/** 最寄駅 */
 	private String nearestStation;
+	/** 価格 */
 	private Integer price;
+	/** 駐車場 */
 	private String parking;
 	
 	public Integer getId() {

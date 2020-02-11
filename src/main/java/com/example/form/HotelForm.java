@@ -2,16 +2,28 @@ package com.example.form;
 
 import org.hibernate.validator.constraints.Range;
 
+/**
+ * 検索時に使用するフォーム.
+ * 
+ * @author oyamadakenji
+ *
+ */
 public class HotelForm {
 
+	/** ID */
 	private String id;
+	/** エリアネーム */
 	private String areaName;
+	/** ホテル名 */
 	private String hotelName;
+	/** 住所 */
 	private String address;
+	/** 最寄駅 */
 	private String nearestStation;
-//    @Size(max = 5, message ="2万1円以上の価格のホテルはございません。")
+	/** 価格 */
     @Range(max = 20000, message ="2万1円以上の価格のホテルはございません。")
 	private String price;
+    /** 駐車場 */
 	private String parking;
 	
 	public Integer getIntPrice() {

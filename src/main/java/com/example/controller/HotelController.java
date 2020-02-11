@@ -14,6 +14,12 @@ import com.example.domain.Hotel;
 import com.example.form.HotelForm;
 import com.example.service.HotelService;
 
+/**
+ * ホテル関連の処理の制御をするコントローラー.
+ * 
+ * @author oyamadakenji
+ *
+ */
 @Controller
 @RequestMapping("/hotel")
 public class HotelController {
@@ -21,16 +27,34 @@ public class HotelController {
 	@Autowired
 	private HotelService hotelService;
 
+	/**
+	 * ホテルを検索する際のリクエストパラメータが格納される.
+	 * 
+	 * @return リクエストパラメータの入ったオブジェクト
+	 */
 	@ModelAttribute
 	public HotelForm setUpHotelForm() {
 		return new HotelForm();
 	}
 
+	/**
+	 * ホテル検索画面に遷移する.
+	 * 
+	 * @return ホテル検索画面
+	 */
 	@RequestMapping("")
 	public String index() {
 		return "hotel/index";
 	}
 
+	/**
+	 * ホテルの情報を検索する.
+	 * 
+	 * @param form 検索画面からのリクエストパラメータを受け取る
+	 * @param result エラー情報を格納する
+	 * @param model リクエストパラメータ
+	 * @return ホテル検索画面
+	 */
 	@RequestMapping("receive-form")
 	public String searchByLessThanPrice(@Validated HotelForm form, BindingResult result, Model model) {
 
