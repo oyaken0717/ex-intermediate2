@@ -11,6 +11,12 @@ import org.springframework.stereotype.Repository;
 
 import com.example.domain.Cloth;
 
+/**
+ * 衣服の情報を取得するレポジトリ.
+ * 
+ * @author oyamadakenji
+ *
+ */
 @Repository
 public class ClothRepository {
 
@@ -29,6 +35,13 @@ public class ClothRepository {
 		return cloth;
 	};
 
+	/**
+	 * 性別と色から衣服の情報を取得する.
+	 * 
+	 * @param gender 性別
+	 * @param color 色
+	 * @return 衣服の情報の入ったList型のオブジェクト
+	 */
 	public List<Cloth> findByGenderAndcolor(Integer gender, String color) {
 		String sql = "SELECT * FROM clothes WHERE gender = :gender AND color = :color";
 		SqlParameterSource param = new MapSqlParameterSource().addValue("gender", gender).addValue("color", color);

@@ -1,15 +1,28 @@
 package com.example.domain;
 
+/**
+ * 衣服の情報を表すドメイン.
+ * 
+ * @author oyamadakenji
+ *
+ */
 public class Cloth {
-
+	
+	/** ID */
 	private Integer id;
+	/** カテゴリー */
 	private String category;
+	/** ジャンル */
 	private String genre;
 
+	/** 性別 */
 	private Integer gender;
+	/** 色 */
 	private String color;
 	
+	/** 価格 */
 	private Integer price;
+	/** サイズ */
 	private String size;
 	
 	public Integer getId() {

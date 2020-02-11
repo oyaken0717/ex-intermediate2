@@ -2,15 +2,28 @@ package com.example.form;
 
 import javax.validation.constraints.NotBlank;
 
+/**
+ * 検索画面からのリクエストパラメータを受け取る.
+ * 
+ * @author oyamadakenji
+ *
+ */
 public class ClothForm {
-
+	
+	/** ID */
 	private String id;
+	/** カテゴリー */
 	private String category;
+	/** ジャンル */
 	private String genre;
+	/** 性別 */
 	@NotBlank(message="入力ミスがあります。")
 	private String gender;
+	/** 色 */
 	private String color;
+	/** 価格 */
 	private String price;
+	/** サイズ */
 	private String size;
 	
 	public Integer getIntId() {
