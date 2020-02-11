@@ -1,10 +1,13 @@
 package com.example.form;
 
+import javax.validation.constraints.NotBlank;
+
 public class ClothForm {
 
 	private String id;
 	private String category;
 	private String genre;
+	@NotBlank(message="入力ミスがあります。")
 	private String gender;
 	private String color;
 	private String price;

@@ -7,9 +7,10 @@
 </head>
 <body>
 
-	<form th:action="@{/cloth/receive-form}" method="post">
-		<input type="radio" name="gender" value="0" checked>Man<br>
-		<input type="radio" name="gender" value="1">Woman<br>
+	<form th:action="@{/cloth/receive-form}" method="post" th:object="${clothForm}">
+		<div th:errors="*{gender}" style="color:red"></div>
+		<input type="radio" name="gender" value="0" th:field="*{gender}" checked>Man<br>
+		<input type="radio" name="gender" value="1" th:field="*{gender}">Woman<br>
 		
 		<select name="color">
 			<option value="赤">赤</option>
